@@ -1,4 +1,4 @@
-import { REACT_APP_FOLDER_PATH, SUBGRAPH_FOLDER_PATH } from "../constants"
+import { SUBGRAPH_FOLDER_PATH } from "../constants"
 import * as fs from "fs"
 
 const deploymentsDir = "./deployments"
@@ -9,7 +9,7 @@ const deploymentsDir = "./deployments"
  * @param network network name - localhost/goerli/mainnet etc
  * @param destinationFolder folder where abi & address will be updated
  */
-const publishContract = async (
+const publishToSubgraph = async (
     contractName: string,
     network: string,
     destinationFolder: string
@@ -84,8 +84,7 @@ const main = async () => {
                 // }
             })
             // console.log(`Contract Name: ${contractName} ChainId: ${chainId}`)
-            publishContract(contractName, dir, REACT_APP_FOLDER_PATH)
-            publishContract(contractName, dir, SUBGRAPH_FOLDER_PATH)
+            publishToSubgraph(contractName, dir, SUBGRAPH_FOLDER_PATH)
         }
     })
 }

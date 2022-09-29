@@ -9,6 +9,7 @@ outputs
 #Hardhat files
 cache
 artifacts
+deployments
 
 
 
